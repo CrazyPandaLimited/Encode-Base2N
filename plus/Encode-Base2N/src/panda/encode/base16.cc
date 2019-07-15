@@ -25,7 +25,7 @@ static const unsigned char index16[256] = {
     XX,XX,XX,XX, XX,XX,XX,XX, XX,XX,XX,XX, XX,XX,XX,XX
 };
 
-size_t encode_base16 (const std::string_view source, char* dest, bool upper) {
+size_t encode_base16 (const string_view source, char* dest, bool upper) {
     const char* basis = upper ? basis16up : basis16;
     unsigned const char* str = (unsigned const char*)source.data();
     unsigned const char* const end = str + source.length();
@@ -40,7 +40,7 @@ size_t encode_base16 (const std::string_view source, char* dest, bool upper) {
     return ptr - dest;
 }
 
-size_t decode_base16 (const std::string_view source, char* dest) {
+size_t decode_base16 (const string_view source, char* dest) {
     unsigned const char* str = (unsigned const char*)source.data();
     unsigned const char* const end = str + source.length();
     char* ptr = dest;

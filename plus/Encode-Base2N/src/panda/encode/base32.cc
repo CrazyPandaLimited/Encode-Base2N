@@ -27,7 +27,7 @@ static const unsigned char index32[256] = {
     XX,XX,XX,XX, XX,XX,XX,XX, XX,XX,XX,XX, XX,XX,XX,XX
 };
 
-size_t encode_base32 (const std::string_view source, char* dest, bool upper) {
+size_t encode_base32 (const string_view source, char* dest, bool upper) {
     const char* const basis = upper ? basis32up : basis32;
     const unsigned char* str = (unsigned char*)source.data();
     const unsigned char* const end = str + source.length();
@@ -76,7 +76,7 @@ size_t encode_base32 (const std::string_view source, char* dest, bool upper) {
     return ptr - dest;
 }
 
-size_t decode_base32 (const std::string_view source, char* dest) {
+size_t decode_base32 (const string_view source, char* dest) {
     const char* str = source.data();
     const char* const end = str + source.length();
     unsigned char* ptr = (unsigned char*)dest;

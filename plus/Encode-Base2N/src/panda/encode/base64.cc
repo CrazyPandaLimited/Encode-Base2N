@@ -31,7 +31,7 @@ static const unsigned char index64[256] = {
     XX,XX,XX,XX, XX,XX,XX,XX, XX,XX,XX,XX, XX,XX,XX,XX,
 };
 
-size_t encode_base64 (const std::string_view source, char* dest, bool url_mode, bool use_pad) {
+size_t encode_base64 (const string_view source, char* dest, bool url_mode, bool use_pad) {
     char* ptr = dest;
     const char* basis = url_mode ? basis64url : basis64;
     const char* str = source.data();
@@ -56,7 +56,7 @@ size_t encode_base64 (const std::string_view source, char* dest, bool url_mode, 
     return ptr - dest;
 }
 
-size_t decode_base64 (const std::string_view source, char* dest) {
+size_t decode_base64 (const string_view source, char* dest) {
     const unsigned char* str = (const unsigned char*)source.data();
     const unsigned char* const end = str + source.length();
     char* ptr = dest;
