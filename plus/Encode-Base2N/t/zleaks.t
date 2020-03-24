@@ -7,7 +7,7 @@ use Encode::Base2N qw/
 
 use Test::More;
 
-plan skip_all => 'set WITH_LEAKS=1 to enable leaks test' unless $ENV{WITH_LEAKS};
+plan skip_all => 'set TEST_FULL=1 to enable leaks test' unless $ENV{TEST_FULL};
 
 my $ok = eval {
     require BSD::Resource;
