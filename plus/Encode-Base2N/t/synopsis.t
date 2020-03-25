@@ -1,7 +1,6 @@
 use 5.012;
 use warnings;
 use Test::More;
-use Test::Warnings;
 
 #plan skip_all => "set TEST_FULL=1 to enable synopsises tests" unless $ENV{TEST_FULL};
 
