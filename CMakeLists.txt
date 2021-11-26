@@ -39,7 +39,7 @@ target_link_libraries(${PROJECT_NAME}-tests PUBLIC Catch2::Catch2)
 enable_testing()
 add_executable(${PROJECT_NAME}-runtests ${EXCLUDE_TEST} ${testSource} "tests/main.cc")
 target_link_libraries(${PROJECT_NAME}-runtests ${PROJECT_NAME}-tests Catch2::Catch2WithMain)
-add_test(test-all ${PROJECT_NAME}-runtests)
+add_test(${PROJECT_NAME} ${PROJECT_NAME}-runtests)
 
 ########################install#####################################
 #include(GNUInstallDirs)
